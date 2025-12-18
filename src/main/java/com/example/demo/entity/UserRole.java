@@ -2,7 +2,13 @@ package com.example.demo.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 public class UserRole {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private LocalDate assignedAt;
 
