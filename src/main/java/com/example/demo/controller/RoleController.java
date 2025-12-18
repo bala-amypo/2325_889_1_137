@@ -30,17 +30,15 @@ public class RoleController {
         return roleRepository.findById(id).orElse(null);
     }
 
-    @PutMapping("/{id}")
-    public Role updateRole(@PathVariable Long id, @RequestBody Role role) {
-        Role existing = roleRepository.findById(id).orElse(null);
-        if (existing != null) {
-            existing.setRoleKey(role.getRoleKey());
-            existing.setDescription(role.getDescription());
-            existing.setActive(role.getActive());
-            return roleRepository.save(existing);
-        }
-        return null;
+   @PutMapping("/{id}")
+public Role updateRole(@PathVariable Long id, @RequestBody Role role) {
+    Role existing = roleRepository.findById(id).orElse(null);
+    if (existing != null) {
+        existing.setRoleName(role.getRoleName());
+        return roleRepository.save(existing);
     }
+    return null;
+}
 
     @PutMapping("/{id}/deactivate")
     public Role deactivateRole(@PathVariable Long id) {
