@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-// import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,14 +15,14 @@ public class Role {
     private String roleName;
     private String description;
     private boolean active;
-    public Role(boolean active) {
-        this.active = active;
-    }
+    
     public Role(Long id, String roleName, String description, boolean active) {
         this.id = id;
         this.roleName = roleName;
         this.description = description;
         this.active = active;
+    }
+    public Role() {
     }
     public Long getId() {
         return id;
