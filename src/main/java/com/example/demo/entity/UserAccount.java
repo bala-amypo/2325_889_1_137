@@ -2,24 +2,16 @@
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 public class UserAccount {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
     private String email;
-    public UserAccount(String email) {
-        this.email = email;
-    }
     private String fullName;
     private Boolean active;
     private LocalDate createdAt;
     private LocalDate updatedAt;
+    
+    public UserAccount() {
+    }
     public UserAccount(Long id, String email, String fullName, Boolean active, LocalDate createdAt,
             LocalDate updatedAt) {
         this.id = id;
