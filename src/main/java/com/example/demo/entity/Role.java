@@ -14,9 +14,9 @@ public class Role {
     @Column(unique = true)
     private String roleName;
     private String description;
-    private boolean active;
+    private Boolean active;
     
-    public Role(Long id, String roleName, String description, boolean active) {
+    public Role(Long id, String roleName, String description, Boolean active) {
         this.id = id;
         this.roleName = roleName;
         this.description = description;
