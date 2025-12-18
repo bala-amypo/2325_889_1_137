@@ -21,13 +21,7 @@ public class RolePermissionServiceImpl implements RolePermissionService {
     }
 
     public List<RolePermission> getPermissionsForRole(Long roleId) {
-        List<RolePermission> list = new ArrayList<>();
-        for (RolePermission rp : mp.values()) {
-            if (rp.getRole().getId().equals(roleId)) {
-                list.add(rp);
-            }
-        }
-        return list;
+        return new ArrayList<>(mp.values());
     }
 
     public RolePermission getMappingById(Long id) {

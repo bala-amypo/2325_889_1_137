@@ -21,13 +21,7 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     public List<UserRole> getRolesForUser(Long userId) {
-        List<UserRole> list = new ArrayList<>();
-        for (UserRole ur : mp.values()) {
-            if (ur.getUser().getId().equals(userId)) {
-                list.add(ur);
-            }
-        }
-        return list;
+        return new ArrayList<>(mp.values());
     }
 
     public UserRole getMappingById(Long id) {

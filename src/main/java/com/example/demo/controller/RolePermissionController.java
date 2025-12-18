@@ -20,13 +20,13 @@ public class RolePermissionController {
         return rolePermissionRepository.save(rolePermission);
     }
 
-    @GetMapping("/role/{roleId}")
-    public List<RolePermission> getPermissionsByRole(@PathVariable Long roleId) {
-        return rolePermissionRepository.findByRoleId(roleId);
+    @GetMapping
+    public List<RolePermission> getAllRolePermissions() {
+        return rolePermissionRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public RolePermission getMappingById(@PathVariable Long id) {
+    public RolePermission getById(@PathVariable Long id) {
         return rolePermissionRepository.findById(id).orElse(null);
     }
 
