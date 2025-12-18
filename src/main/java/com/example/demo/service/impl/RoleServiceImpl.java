@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,9 +8,10 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Role;
+import com.example.demo.service.RoleService;
 
 @Service
-public class RoleService {
+public class RoleServiceImpl implements RoleService {
 
     Map<Long, Role> mp = new HashMap<>();
 

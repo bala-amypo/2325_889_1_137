@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,17 +8,20 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.UserRole;
+import com.example.demo.service.UserRoleService;
 
 @Service
-public class UserRoleService {
+public class UserRoleServiceImpl implements UserRoleService {
 
     Map<Long, UserRole> mp = new HashMap<>();
 
+    @Override
     public UserRole assignRole(UserRole userRole) {
         mp.put(userRole.getId(), userRole);
         return userRole;
     }
 
+    @Override
     public List<UserRole> getRolesForUser(Long userId) {
         List<UserRole> list = new ArrayList<>();
         for (UserRole ur : mp.values()) {
@@ -29,10 +32,12 @@ public class UserRoleService {
         return list;
     }
 
+    @Override
     public UserRole getMappingById(Long id) {
         return mp.get(id);
     }
 
+    @Override
     public void removeRole(Long id) {
         mp.remove(id);
     }

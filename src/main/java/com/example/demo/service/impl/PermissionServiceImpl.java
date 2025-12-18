@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,9 +8,10 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Permission;
+import com.example.demo.service.PermissionService;
 
 @Service
-public class PermissionService {
+public class PermissionServiceImpl implements PermissionService {
 
     Map<Long, Permission> mp = new HashMap<>();
 
@@ -19,17 +20,17 @@ public class PermissionService {
         return permission;
     }
 
-    public List<Permission> getAllPermissions() {
-        return new ArrayList<>(mp.values());
+    public Permission updatePermission(Long id, Permission permission) {
+        mp.replace(id, permission);
+        return permission;
     }
 
     public Permission getPermissionById(Long id) {
         return mp.get(id);
     }
 
-    public Permission updatePermission(Long id, Permission permission) {
-        mp.replace(id, permission);
-        return permission;
+    public List<Permission> getAllPermissions() {
+        return new ArrayList<>(mp.values());
     }
 
     public Permission deactivatePermission(Long id) {
