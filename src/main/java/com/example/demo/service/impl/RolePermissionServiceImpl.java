@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,9 +8,10 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.RolePermission;
+import com.example.demo.service.RolePermissionService;
 
 @Service
-public class RolePermissionService {
+public class RolePermissionServiceImpl implements RolePermissionService {
 
     Map<Long, RolePermission> mp = new HashMap<>();
 

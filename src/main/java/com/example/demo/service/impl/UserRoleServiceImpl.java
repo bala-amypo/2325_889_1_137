@@ -15,13 +15,11 @@ public class UserRoleServiceImpl implements UserRoleService {
 
     Map<Long, UserRole> mp = new HashMap<>();
 
-    @Override
     public UserRole assignRole(UserRole userRole) {
         mp.put(userRole.getId(), userRole);
         return userRole;
     }
 
-    @Override
     public List<UserRole> getRolesForUser(Long userId) {
         List<UserRole> list = new ArrayList<>();
         for (UserRole ur : mp.values()) {
@@ -32,12 +30,10 @@ public class UserRoleServiceImpl implements UserRoleService {
         return list;
     }
 
-    @Override
     public UserRole getMappingById(Long id) {
         return mp.get(id);
     }
 
-    @Override
     public void removeRole(Long id) {
         mp.remove(id);
     }
