@@ -1,13 +1,9 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user_account")
+@Table(name = "user_accounts")
 public class UserAccount {
 
     @Id
@@ -15,16 +11,17 @@ public class UserAccount {
     private Long id;
 
     private String username;
-    private String password;
+
+    private String email;
+
     private Boolean active;
 
-    public UserAccount() {
-    }
+    public UserAccount() {}
 
-    public UserAccount(Long id, String username, String password, Boolean active) {
+    public UserAccount(Long id, String username, String email, Boolean active) {
         this.id = id;
         this.username = username;
-        this.password = password;
+        this.email = email;
         this.active = active;
     }
 
@@ -44,12 +41,12 @@ public class UserAccount {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
-  
-    public void setPassword(String password) {
-        this.password = password;
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Boolean getActive() {
