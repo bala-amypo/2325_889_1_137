@@ -11,9 +11,11 @@ import com.example.demo.repository.RoleRepository;
 @RestController
 @RequestMapping("/api/roles")
 public class RoleController {
-
-    @Autowired
     private RoleRepository roleRepository;
+
+    public RoleController(RoleRepository roleRepository) {
+        this.roleRepository = roleRepository;
+    }
 
     @PostMapping
     public Role createRole(@RequestBody Role role) {
