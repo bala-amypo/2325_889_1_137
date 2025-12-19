@@ -5,7 +5,9 @@ import java.time.LocalDate;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
 
+@Entity
 public class RolePermission {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
