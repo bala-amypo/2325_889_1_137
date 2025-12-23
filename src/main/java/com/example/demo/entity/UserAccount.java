@@ -1,59 +1,32 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import java.time.Instant;
 
 @Entity
-@Table(name = "user_accounts")
 public class UserAccount {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
-    private String username;
-
     private String email;
+    private String fullName;
+    private boolean active = true;
 
-    private Boolean active;
+    private Instant createdAt;
+    private Instant updatedAt;
 
-    public UserAccount() {}
-
-    public UserAccount(Long id, String username, String email, Boolean active) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.active = active;
+    @PrePersist
+    void onCreate() {
+        createdAt = Instant.now();
+        updatedAt = createdAt;
     }
 
-    public Long getId() {
-        return id;
+    @PreUpdate
+    void onUpdate() {
+        updatedAt = Instant.now();
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
+    // getters & setters
 }
