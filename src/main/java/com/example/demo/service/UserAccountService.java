@@ -1,18 +1,17 @@
 package com.example.demo.service;
 
 import java.util.List;
-
 import com.example.demo.entity.UserAccount;
 
 public interface UserAccountService {
 
-    UserAccount createUser(UserAccount userAccount);
+    UserAccount createUser(UserAccount user);
+
+    UserAccount updateUser(long id, UserAccount user);
+
+    UserAccount getUserById(long id);
+
+    void deactivateUser(long id);
 
     List<UserAccount> getAllUsers();
-
-    UserAccount getUserById(Long id);
-
-    UserAccount updateUser(Long id, UserAccount userAccount);
-
-    UserAccount deactivateUser(Long id);
 }

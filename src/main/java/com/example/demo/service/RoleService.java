@@ -7,11 +7,11 @@ public interface RoleService {
 
     Role createRole(Role role);
 
-    Role updateRole(Long id, Role role);
-
-    Role getRoleById(Long id);
-
     List<Role> getAllRoles();
 
-    Role deactivateRole(Long id);
+    Role getRoleById(long id);
+
+    Role updateRole(long id, Role role);
+
+    void deactivateRole(long id);
 }
