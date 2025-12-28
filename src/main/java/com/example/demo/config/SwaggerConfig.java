@@ -43,7 +43,7 @@ public class SwaggerConfig {
         return new OpenAPI()
                 // ✅ Server configuration (you already had this)
                 .servers(List.of(
-                        new Server().url("https://9223.pro604cr.amypo.ai/")
+                        new Server().url("https://9293.pro604cr.amypo.ai/")
                 ))
 
                 // ✅ THIS enables the Authorize button
