@@ -1,35 +1,17 @@
-// package com.example.demo.service;
-
-// import java.util.List;
-// import com.example.demo.entity.RolePermission;
-
-// public interface RolePermissionService {
-
-//     RolePermission grantPermission(RolePermission rolePermission);
-
-//     List<RolePermission> getPermissionsForRole(Long roleId);
-
-//     RolePermission getMappingById(Long id);
-
-//     void revokePermission(Long id);
-// }
-
-
-
-
 package com.example.demo.service;
 
 import java.util.List;
+import com.example.demo.entity.Role;
 
-import com.example.demo.entity.RolePermission;
+public interface RoleService {
 
-public interface RolePermissionService {
+    Role createRole(Role role);
 
-    RolePermission grantPermission(RolePermission mapping);
+    List<Role> getAllRoles();
 
-    List<RolePermission> getPermissionsForRole(Long roleId);
+    Role getRoleById(long id);
 
-    RolePermission getMappingById(Long id);
+    Role updateRole(long id, Role role);
 
-    void revokePermission(Long mappingId);
+    void deactivateRole(long id);
 }
