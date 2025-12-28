@@ -65,18 +65,20 @@ public class AuthServiceImpl implements AuthService {
     // =========================================================
     // REGISTER (t57)
     // =========================================================
-    @Override
-    public void register(RegisterRequestDto request) {
+   @Override
+public void register(RegisterRequestDto request) {
 
-        if (userAccountRepository.existsByEmail(request.getEmail())) {
-            throw new BadRequestException("Email already exists");
-        }
-
-        UserAccount user = new UserAccount();
-        user.setEmail(request.getEmail());
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setActive(true);
-
-        userAccountRepository.save(user);
+    if (userAccountRepository.existsByEmail(request.getEmail())) {
+        throw new BadRequestException("Email already exists");
     }
+
+    UserAccount user = new UserAccount();
+    user.setEmail(request.getEmail());
+    user.setPassword(passwordEncoder.encode(request.getPassword()));
+    user.setFullName(request.getFullName()); // optional but good
+    user.setActive(true);
+
+    userAccountRepository.save(user);
+}
+
 }
